@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="ms-appx-web:///SerrisCoffee/web_assets/js2coffee.js"></script>
+    <script src="ms-appx-web:///SerrisCoffee/web_assets/coffee-script.js"></script>
+</head>
+
+<body>
+    <script>
+        function GetCoffee(code)
+        {
+            try
+            {
+                return window.js2coffee.build(code).code;
+            } catch (e)
+            {
+                return e.message;
+            }
+        }
+
+        function GetJS(code)
+        {
+            try
+            {
+                var bidule = "";
+                bidule = CoffeeScript.compile(code, { bare: true });
+                return bidule;
+            } catch (error)
+            {
+                var location = error.location, message = error.message;
+                if (location != null)
+                {
+                    return "Error on line " + (location.first_line + 1) + ": " + message;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
