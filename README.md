@@ -1,4 +1,4 @@
-# SerrisCoffee
+# SerrisCoffee - Coffee library for UWP platform
 UWP library to compile Coffee to JS/JS to Coffee !
 
 # Informations
